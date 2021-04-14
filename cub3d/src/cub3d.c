@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+main function. Steps:	1)Create and initialize t_all type variable
+			2)Parse .cub file
+			...
+			n)End the program
+			
+*/
+
 #include "header/cub3d.h"
 
 int	main(int argc, char **argv)
