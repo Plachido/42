@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 
 /*
-main function. Steps:	1)Create and initialize t_all type variable
-			2)Parse .cub file
+main function. Steps:	1) Create and initialize t_all* type variable
+			2) Parse .cub file
 			...
-			n)End the program
+			n) End the program
 			
 */
 
