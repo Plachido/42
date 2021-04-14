@@ -21,6 +21,11 @@ static void	ft_init_info(t_info *info)
 	info->S = NULL;
 }
 
+/*
+This function initializes the t_all type variable, by creating and pointing
+the elements it contains.
+*/
+
 void	ft_init(t_all *all)
 {
 	t_info	*info;
@@ -31,6 +36,10 @@ void	ft_init(t_all *all)
 	mlx = calloc(1, sizeof(t_mlx*));
 	all->info = info;
 }
+
+/*
+FORSE TRASCURABILE CON CALLOC
+*/
 
 void	ft_init_array(int *arr, int dim)
 {
