@@ -1,0 +1,1 @@
+The rush function displays (on-screen) a rectangle of x characters for width, and y characters for length. This project's code does follow the norme, and has been graded 95/100 because of the lack of some error handling.
