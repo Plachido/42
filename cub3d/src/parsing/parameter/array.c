@@ -39,18 +39,3 @@ void	ft_set_crf(int arr[3], char par, t_all *all)
 		all->info->F[2] = arr[2];
 	}
 }
-
-/*
-
-
-void	ft_call_set_crf(int arr[3], char crf, t_all *all)
-{
-	if (crf == 'C')
-		ft_set_crf(arr, 'C', all);
-	if (crf == 'R')
-		ft_set_crf(arr, 'R', all);
-	if (crf == 'F')
-		ft_set_crf(arr, 'F', all);
-}
-
-*/
