@@ -16,6 +16,14 @@
 Map parsing happens in this file.
 */
 
+/*
+This function populates a list with the rows of the .cub file indicating the map.
+Technically, each row becomes the 'content' element of the t_list object.
+When the end of line is read, the last row gets too but would be excluded from the
+loop: this is why at the end, the same code written inside the loop is repeated
+once.
+*/
+
 static void	ft_map_list(int fd, char *first, t_list **map_lines, t_all *all)
 {
 	char	*line;
@@ -27,7 +35,12 @@ static void	ft_map_list(int fd, char *first, t_list **map_lines, t_all *all)
 	ft_lstadd_back(map_lines, ft_lstnew(ft_copy_free(line)));
 }
 
-static void ft_empty(void* none){};
+/*
+This is the main map parsing function. Here a list is created, in order to know
+what size the matrix containing the map should be. After having populated that
+list with the use of ft_map_list, all parsed strings containing the map are put
+inside the matrix. The list is freed at the end of the function.
+*/
 
 void	ft_get_map(int fd, t_all *all, char *first)
 {
