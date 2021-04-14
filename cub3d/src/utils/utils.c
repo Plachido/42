@@ -17,22 +17,6 @@ This file containes useful functions of various types.
 */
 
 /*
-The following function returns the parameter defined string trimmed of eventual
-whitespaces at the beginning or at the end. The original string is freed.
-
-
-char	*ft_free_trim_ws(char *string)
-{
-	char	*tmp;
-
-	tmp = ft_substr(string, 0, ft_strlen(string));
-	free(string);
-	string = ft_strtrim(tmp, " ");
-	free(tmp);
-	return (string);
-}*/
-
-/*
 This function joins two strings, and frees only the first one passed.
 */
 
@@ -45,6 +29,11 @@ char	*ft_append(char *string, char *app)
 	return (ret);
 }
 
+/* Frees the correct variables, in the eventuality a bad parameter is found.
+These frees could not be included inside ft_error, since it does take only
+the structure and the error message as parameters.
+*/
+
 void	ft_bad_par(char *string, char *checked, t_all *all)
 {
 	free(string);
@@ -52,6 +41,8 @@ void	ft_bad_par(char *string, char *checked, t_all *all)
 	checked = NULL;
 	ft_error(BAD_PAR, all);
 }
+
+/* Removes the last elements of a t_list. */
 
 void	ft_lstrm_last(t_list *list)
 {
@@ -68,6 +59,7 @@ void	ft_lstrm_last(t_list *list)
 	free(elem);
 }
 
+/* Copies a string and returns it. The original is freed. */
 char *ft_copy_free(char *string)
 {
 	char *res;
