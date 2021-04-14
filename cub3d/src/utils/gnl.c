@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Short version of get_next_line, with buffer size set to one. The main idea is
+that every character is read and appended to the string which has to get filled.
+If the character is \n 1 is returned, if the EOF has been reached 0 is returned,
+else -1 is returned (error).
+*/
+
 #include "../header/cub3d.h"
 
 static char	*ft_charjoin(char *s, char c, int max, t_all *all)
