@@ -6,18 +6,29 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:13:54 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/07 17:28:43 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/14 19:44:26 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/cub3d.h"
 
+static void	ft_init_info(t_info *info)
+{
+	info->SO = NULL;
+	info->WE = NULL;
+	info->EA = NULL;
+	info->NO = NULL;
+	info->S = NULL;
+}
+
 void	ft_init(t_all *all)
 {
 	t_info	*info;
+	t_mlx	*mlx;
 
-	ft_bzero(all, sizeof(t_all));
-	info = calloc(1, sizeof(*info));
+	info = calloc(1, sizeof(t_info*));
+	ft_init_info(info);
+	mlx = calloc(1, sizeof(t_mlx*));
 	all->info = info;
 }
 

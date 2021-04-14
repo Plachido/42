@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 16:57:50 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/12 19:11:35 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/14 16:38:52 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ void	ft_elab_cub(char *path, t_all *all)
 
 	ft_check_ext(path, all);
 	fd = open(path, O_RDONLY);
-	//ft_get_param(fd, all);
 	ft_get_map(fd, all, ft_get_param(fd, all));
+	ft_param_check(all);
 }

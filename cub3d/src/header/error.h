@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 14:08:13 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/07 18:00:58 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/14 17:07:47 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ This header file contains all macros for errors to be displayed.
 # define MALLOC_FAIL "FAILED TO ALLOCATE MEMORY\n"
 # define NOT_CUB "BAD MAP FILE: FILE EXTENSION IS NOT .cub\n"
 # define BAD_PAR "BAD PARAMETER\n"
+# define WRONG_PATH "BAD PATH TO TEXTURE GIVEN\n"
+# define BAD_RGB "RGB VALUES ENTERED ARE INCORRECT"
 #endif

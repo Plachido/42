@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 14:07:16 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/13 19:16:26 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/14 19:46:28 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 	if (argc >= 2)
 	{
 		ft_init(all);
+		//all->mlx->mlx_ptr = mlx_init();
 		ft_elab_cub(argv[1], all);
 		ft_print_all(all);
 	}

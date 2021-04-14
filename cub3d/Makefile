@@ -1,13 +1,12 @@
 MAP = maps/first.cub
 
-MLX = -lmlx -lm -framework OpenGL -framework AppKit
-#MLX = -I /usr/include -g -L /usr/lib -lX11 -lmlx -lXext -lm -fsanitize=address
+
 
 NAME = cub3D
 
-SRCS = 	$(shell find . -path ./src/header/minilibx -prune -false -o -name '*.c')
+SRCS = 	$(shell find . -path ./src/header/minilibx_mms_20200219 -prune -false -o -name '*.c')
 
-FILES = $(shell find . -path ./src/header/minilibx -prune -false -o -name '*.c' -o -name '*.h' ! -name 'mlx.h')
+FILES = $(shell find . -path ./src/header/minilibx_mms_20200219 -prune -false -o -name '*.c' -o -name '*.h' ! -name 'mlx.h')
 
 SRCS_BONUS = 
 
@@ -20,7 +19,7 @@ $(NAME) : $(OBJSRCS) $(OBJSRCSBONUS)
 	@echo "[Libft compilation...]"
 	@$(MAKE) bonus -C ./libft
 	@echo "[Cub3D compilation...]"
-	@gcc $(OBJSRCS) $(OBJSRCSBONUS) -I./src/header/cub3d.h -Wall -Wextra -Werror $(MLX) ./libft/libft.a -o $(NAME)
+	@gcc $(OBJSRCS) $(OBJSRCSBONUS) -I./src/header/cub3d.h -Wall -Wextra -Werror ./libft/libft.a libmlx.dylib -o $(NAME)
 	@echo "[Done!]"
 	@$(MAKE) clean
 

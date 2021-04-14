@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:54:25 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/13 19:25:56 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:49:02 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,14 @@ void	ft_free_info(t_all *all)
 		free(info->EA);
 	if (info->S)
 		free(info->S);
-	while (info->map[i])
-	{
-		free(info->map[i]);
-		info->map[i++] = NULL;
-		if (!info->map[i])
-			free(info->map);
-	}
+	if (info->map)
+		while (info->map[i])
+		{
+			free(info->map[i]);
+			info->map[i++] = NULL;
+			if (!info->map[i])
+				free(info->map);
+		}
 	if (info)
 		free(info);
 }

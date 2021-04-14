@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 14:08:06 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/12 19:30:35 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:40:43 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include "../../libft/libft.h"
+# include "minilibx_mms_20200219/mlx.h"
 
 # include "error.h"
 
@@ -33,9 +34,15 @@ typedef struct s_info
 	char		**map;
 }				t_info;
 
+typedef struct s_mlx
+{
+	void	*mlx_ptr;
+}				t_mlx;
+
 typedef struct s_all
 {
 	t_info		*info;
+	t_mlx		*mlx;
 }				t_all;
 
 //gnl.c
@@ -72,5 +79,8 @@ void			ft_init_array(int *arr, int dim);
 
 //map.h
 void			ft_get_map(int fd, t_all *all, char *first);
+
+//param_check.c
+void	ft_param_check(t_all *all);
 
 #endif
