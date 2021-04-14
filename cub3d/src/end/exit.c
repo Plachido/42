@@ -19,7 +19,7 @@ Calls free functions for each structure and for the 'all' structure.
 
 void	ft_error(char *text, t_all *all)
 {
-	printf("%s", text);
+	printf("Error\n%s", text);
 	ft_free_info(all);
 	free(all);
 	exit(0);
