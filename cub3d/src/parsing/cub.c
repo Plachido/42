@@ -29,7 +29,13 @@ static void	ft_check_ext(char *path, t_all *all)
 
 /*
 Calls all main parsing functions. get_param call is inside get_map because it
-returns the last line read, which also is the first map line
+returns the last line read, which also is the first map line.
+Steps:	1) Check the extension of the file passed
+	2) Open the file
+	3) Parse the parameters
+	4) Parse the map
+	5) Check the parameters
+	6) Check the map
 */
 
 void	ft_elab_cub(char *path, t_all *all)
