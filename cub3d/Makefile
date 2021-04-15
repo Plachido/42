@@ -1,6 +1,6 @@
 MAP = maps/first.cub
 
-
+MLX = libmlx.dylib
 
 NAME = cub3D
 
@@ -13,22 +13,24 @@ SRCS_BONUS =
 OBJSRCS = $(SRCS:.c=.o) 
 OBJSRCSBONUS = $(SRCS_BONUS:.c=.o)
 
-$(NAME) : $(OBJSRCS) $(OBJSRCSBONUS)
+$(NAME) : $(OBJSRCS) $(OBJSRCSBONUS) $(MLX)
 	@echo "[Removing last version...]"
 	@rm -rf Cub3D
-	@echo "[mlx compilation...]"
-	@cd src/header/minilibx_mms_20200219 && make && mv libmlx.dylib ../../..
 	@echo "[Libft compilation...]"
 	@$(MAKE) bonus -C ./libft
 	@echo "[Cub3D compilation...]"
 	@gcc $(OBJSRCS) $(OBJSRCSBONUS) -I./src/header/cub3d.h -Wall -Wextra -Werror ./libft/libft.a libmlx.dylib -o $(NAME)
 	@echo "[Done!]"
-	@mv libmlx.dylib src/header/minilibx_mms_20200219
 	@$(MAKE) clean
 
 all : $(NAME)
 
-run: $(MAKE) all
+$(MLX):
+	@echo "[mlx compilation...]"
+	@$(MAKE) -C src/header/minilibx_mms_20200219
+	mv src/header/minilibx_mms_20200219/libmlx.dylib .
+
+run: $(MAKE) re
 	./$(NAME) $(MAP)
 
 norme:

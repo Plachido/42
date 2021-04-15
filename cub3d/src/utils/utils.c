@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:34:28 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/12 19:30:24 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/15 19:19:53 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ char *ft_copy_free(char *string)
 	char *res;
 	int len;
 
-	len = ft_strlen(string) + 2;
-	res = calloc(len, sizeof(char));
+	len = ft_strlen(string) + 1;
+	res = ft_calloc(len, sizeof(char));
 	ft_strlcpy(res, string, len);
 	free(string);
 	return(res);

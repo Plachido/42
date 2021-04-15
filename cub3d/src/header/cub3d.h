@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 14:08:06 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/14 18:40:43 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/15 18:11:09 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void			ft_error(char *text, t_all *all);
 
 //free.c
 void			ft_free_info(t_all *all);
+void			ft_free_mlx(t_all *all);
 
 //utils.c
 char			*ft_append(char *string, char *app);

@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 19:45:48 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/14 18:30:19 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:37:08 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ static void ft_check_rgb(t_all *all)
 			ft_error(BAD_RGB, all);
 }
 
-static void ft_check_resolution(t_all *all)
-{
+//static void ft_check_resolution(t_all *all)
+//{
 	
-}
+//}
 
 void	ft_param_check(t_all *all)
 {
 	ft_check_path(all);
 	ft_check_rgb(all);
-	ft_check_resolution(all);
+	//ft_check_resolution(all);
 	
 }

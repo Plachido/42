@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 14:07:16 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/14 19:46:28 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/15 18:11:06 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int	main(int argc, char **argv)
 {
 	t_all	*all;
 
-	all = calloc(1, sizeof(t_all));
+	all = malloc(sizeof(t_all));
 	if (!all)
 	{
 		printf(MALLOC_FAIL);
-		exit(0);
+		return(0);
 	}
 	if (argc >= 2)
 	{
