@@ -17,4 +17,3 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: alexandregv/norminette-action@v3
-© 2021 GitHub, Inc.
