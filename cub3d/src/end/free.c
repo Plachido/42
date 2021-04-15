@@ -12,7 +12,10 @@
 
 #include "../header/cub3d.h"
 
-/*All following functions free a specific function*/
+/*
+All following functions free, for each structure, the variables which have
+been allocated.
+*/
 
 void	ft_free_info(t_all *all)
 {
