@@ -15,7 +15,7 @@
 /*
 Used for exiting the program, showing custom error messages(defined in error.h)
 Calls free functions for each structure and for the 'all' structure.
-*/
+*/
 
 void	ft_error(char *text, t_all *all)
 {
