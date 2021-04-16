@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 18:48:57 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/12 19:32:07 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/16 18:15:56 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ static void	ft_parse_crf(char *string, t_all *all, char crf)
 	delim = ',';
 	if (crf == 'R')
 		delim = ' ';
-	arr = malloc(3 * sizeof(int));
-	ft_init_array(arr, 3);
-	while (string[i])
+	arr = ft_calloc(3, sizeof(int));
+	//ft_init_array(arr, 3);
+	while (i <= (int)ft_strlen(string))
 	{
 		while (string[i] != '\0' && string[i] != delim)
 		{

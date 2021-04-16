@@ -1,53 +1,55 @@
-MAP = maps/first.cub
-
-MLX = libmlx.dylib
-
 NAME = cub3D
 
-SRCS = 	$(shell find . -path ./src/header/minilibx_mms_20200219 -prune -false -o -name '*.c')
+MAP = maps/first.cub
 
+LIBFT = ./libft.a
+MLX = libmlx.dylib
+FLAGS = -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
+
+SRCS = 	$(shell find . -path ./src/header/minilibx_mms_20200219 -prune -false -o -name '*.c')
 FILES = $(shell find . -path ./src/header/minilibx_mms_20200219 -prune -false -o -name '*.c' -o -name '*.h' ! -name 'mlx.h')
 
-SRCS_BONUS = 
+CC	=	gcc
 
-OBJSRCS = $(SRCS:.c=.o) 
-OBJSRCSBONUS = $(SRCS_BONUS:.c=.o)
+OBJ = $(SRCS:.c=.o)
 
-$(NAME) : $(OBJSRCS) $(OBJSRCSBONUS) $(MLX)
+$(NAME): $(OBJ) $(MLX) $(LIBFT)
 	@echo "[Removing last version...]"
 	@rm -rf Cub3D
-	@echo "[Libft compilation...]"
-	@$(MAKE) bonus -C ./libft
 	@echo "[Cub3D compilation...]"
-	@gcc $(OBJSRCS) $(OBJSRCSBONUS) -I./src/header/cub3d.h -Wall -Wextra -Werror ./libft/libft.a libmlx.dylib -o $(NAME)
+	@$(MAKE) bonus -C ./libft
+	@gcc $(SRCS) $(FLAGS) -fsanitize=address $(MLX) $(LIBFT) -o $(NAME) -g
 	@echo "[Done!]"
 	@$(MAKE) clean
 
-all : $(NAME)
+$(LIBFT):
+	@echo "[compiling libft...]"
+	@$(MAKE) bonus -C ./libft
+	@$(MAKE) clean -C ./libft
+	@mv libft/libft.a .
 
 $(MLX):
-	@echo "[mlx compilation...]"
+	@echo "[compiling mlx...]"
 	@$(MAKE) -C src/header/minilibx_mms_20200219
-	mv src/header/minilibx_mms_20200219/libmlx.dylib .
+	@mv src/header/minilibx_mms_20200219/libmlx.dylib .
 
-run: $(MAKE) re
-	./$(NAME) $(MAP)
+all : $(NAME)
 
 norme:
 	@norminette $(FILES)
 
 leaks: $(MAKE) all
-	leaks --atExit -- ./$(NAME) $(MAP)
+	@leaks --atExit -- ./$(NAME) $(MAP)
 
-clean :
-	@rm -rf $(OBJSRCS) $(OBJSRCSBONUS)
+run: $(MAKE) re
+	./$(NAME) $(MAP)
+
+clean:
+	@rm -rf $(OBJ)
 	@$(MAKE) clean -C ./libft
 
-fclean : clean
+fclean: clean
+	@rm -rf $(NAME) $(LIBFT) $(MLX)
 	@$(MAKE) fclean -C ./libft
-	@rm -rf $(NAME)
-	@rm -rf cub3d.bmp
 
 re : fclean all
-
-bonus : $(NAME)

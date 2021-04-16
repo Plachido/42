@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 18:24:16 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/15 18:38:16 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/16 18:34:54 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_get_map(int fd, t_all *all, char *first)
 
 	ft_map_list(fd, first, &map_lines, all);
 	i = ft_lstsize(map_lines);
-	all->info->map = ft_calloc(i, sizeof(char *));
+	all->info->map = ft_calloc(i + 1, sizeof(char *));
 	while (i-- > 0)
 	{
 		elem = ft_lstlast(map_lines);
