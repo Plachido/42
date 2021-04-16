@@ -25,13 +25,12 @@ static char	*ft_charjoin(char *s, char c, int max, t_all *all)
 	int		i;
 
 	i = -1;
-	ret = malloc(max + 2);
+	ret = ft_calloc(max + 2, sizeof(char));
 	if (!ret)
 		ft_error(MALLOC_FAIL, all);
 	while (s[++i])
 		ret[i] = s[i];
 	ret[i++] = c;
-	ret[i] = '\0';
 	free(s);
 	return (ret);
 }
@@ -44,10 +43,9 @@ int	ft_gnl(int fd, char **line, t_all *all)
 
 	i = 0;
 	max = 0;
-	if (line == 0)
+	if (!line)
 		return (-1);
-	*line = malloc(1);
-	*line[0] = 0;
+	*line = ft_calloc(1, sizeof(char));
 	i = read(fd, &c, 1);
 	while (i > 0)
 	{
@@ -56,7 +54,7 @@ int	ft_gnl(int fd, char **line, t_all *all)
 		*line = ft_charjoin(*line, c, max++, all);
 		i = read(fd, &c, 1);
 	}
-	if (i == -1)
+	if (i < 0)
 		return (-1);
 	if (i)
 		return (1);
