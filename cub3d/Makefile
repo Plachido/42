@@ -1,17 +1,16 @@
 NAME = cub3D
-
 MAP = maps/first.cub
 
 LIBFT = ./libft.a
 MLX = libmlx.dylib
+
 FLAGS = -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
 
 SRCS = 	$(shell find . -path ./src/header/minilibx_mms_20200219 -prune -false -o -name '*.c')
 FILES = $(shell find . -path ./src/header/minilibx_mms_20200219 -prune -false -o -name '*.c' -o -name '*.h' ! -name 'mlx.h')
 
-CC	=	gcc
-
 OBJ = $(SRCS:.c=.o)
+CC	=	gcc
 
 $(NAME): $(OBJ) $(MLX) $(LIBFT)
 	@echo "[Removing last version...]"
