@@ -41,7 +41,7 @@ leaks: $(MAKE) all
 	@leaks --atExit -- ./$(NAME) $(MAP)
 
 run: $(MAKE) re
-	./$(NAME) $(MAP)
+	@./$(NAME) $(MAP)
 
 clean:
 	@rm -rf $(OBJ)
