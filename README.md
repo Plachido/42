@@ -10,4 +10,4 @@ cub3D                   🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 ```
 
 [![plpelleg's 42 stats](https://badge42.herokuapp.com/api/stats/plpelleg)](https://github.com/JaeSeoKim/badge42)
-<img align="right" src="https://user-images.githubusercontent.com/56682470/110169135-8748f900-7df8-11eb-9a5c-adcbd039da29.png"><br>
+<img align="left" src="https://user-images.githubusercontent.com/56682470/110169135-8748f900-7df8-11eb-9a5c-adcbd039da29.png"><br>
