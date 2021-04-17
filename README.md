@@ -1,8 +1,8 @@
 Repository of all my work produced during 42Cursus.<br>
 All of the code found inside this repository has been written in accordance to the Norme.<br>Piscine excercises, libft, get_next_line and ft_print have been, however, tested only with norminette-V2.<br>
 All subjects, resources, test files and notes can be found inside each folder. 
-<img align="right" src="https://user-images.githubusercontent.com/56682470/110169135-8748f900-7df8-11eb-9a5c-adcbd039da29.png"><br>
 ## Projects
+<img align="right" src="https://user-images.githubusercontent.com/56682470/110169135-8748f900-7df8-11eb-9a5c-adcbd039da29.png"><br>
 ```
 libft               Graded 115/100 from Deepthought
 get_next_line       Graded 115/100 from Deepthought
