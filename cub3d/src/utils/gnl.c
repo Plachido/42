@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:44:15 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/16 16:36:48 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/17 19:57:47 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ static char	*ft_charjoin(char *s, char c, int max, t_all *all)
 	i = -1;
 	ret = ft_calloc(max + 2, sizeof(char));
 	if (!ret)
+	{
+		free(s);
 		ft_error(MALLOC_FAIL, all);
+	}
 	while (s[++i])
 		ret[i] = s[i];
 	ret[i++] = c;
@@ -46,6 +49,8 @@ int	ft_gnl(int fd, char **line, t_all *all)
 	if (!line)
 		return (-1);
 	*line = ft_calloc(1, sizeof(char));
+	if (!line)
+		ft_error(MALLOC_FAIL, all);
 	i = read(fd, &c, 1);
 	while (i > 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 14:08:06 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/16 16:41:56 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/17 19:18:04 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void			ft_free_mlx(t_all *all);
 
 //utils.c
 char			*ft_append(char *string, char *app);
-void			ft_bad_par(char *string, char *checked, t_all *all);
+void			ft_bad_par(char *error, char* string, char *checked, t_all *all);
 void			ft_lstrm_last(t_list *list);
 char			*ft_copy_free(char *string);
 //char			*ft_free_trim_ws(char *string);

@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 18:24:16 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/16 18:34:54 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/17 20:01:16 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,51 @@
 /*
 Map parsing happens in this file.
 */
+
+static int ft_get_max_line(t_list *map_lines, int list_len)
+{
+	int max;
+	int line_len;
+
+	max = 0;
+	while (list_len-- > 0)
+	{
+		line_len = ft_strlen(map_lines->content);
+		if (line_len > max)
+			max = line_len;
+		map_lines = map_lines->next;
+	}
+	return (max);
+}
+
+static void ft_map_padding(t_list **map_lines, t_all *all)
+{
+	t_list *elem;
+	int max;
+	int list_len;
+	char *new_string;
+	int len;
+	
+	elem = *map_lines;
+	list_len = ft_lstsize(elem);
+	max = ft_get_max_line(elem, list_len);
+	while (--list_len)
+	{
+		elem = elem->next;
+		len = ft_strlen(elem->content);
+		new_string = ft_calloc(max, sizeof(char));
+		if (!new_string)
+		{
+			ft_lstclear(map_lines, free);
+			ft_error(MALLOC_FAIL, all);
+		}
+		ft_memcpy(new_string, elem->content, len);
+		while (max - len++)
+			new_string[len] = ' ';
+		free(elem->content);
+		elem->content = new_string;
+	}
+}
 
 /*
 This function populates a list with the rows of the .cub file indicating the map.
@@ -30,8 +75,9 @@ static void	ft_map_list(int fd, char *first, t_list **map_lines, t_all *all)
 
 	*map_lines = ft_lstnew(first);
 	while (ft_gnl(fd, &line, all))
-		ft_lstadd_back(map_lines, ft_lstnew(ft_copy_free(line)));
+		ft_lstadd_back(map_lines, ft_lstnew(ft_copy_free(line))); //add malloc fail error
 	ft_lstadd_back(map_lines, ft_lstnew(ft_copy_free(line)));
+	ft_map_padding(map_lines, all);
 }
 
 /*
@@ -50,6 +96,11 @@ void	ft_get_map(int fd, t_all *all, char *first)
 	ft_map_list(fd, first, &map_lines, all);
 	i = ft_lstsize(map_lines);
 	all->info->map = ft_calloc(i + 1, sizeof(char *));
+	if (!all->info->map)
+	{
+		free(map_lines);
+		ft_error(MALLOC_FAIL, all);
+	}
 	while (i-- > 0)
 	{
 		elem = ft_lstlast(map_lines);

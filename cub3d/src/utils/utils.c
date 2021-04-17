@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:34:28 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/15 19:19:53 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/17 20:00:00 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ These frees could not be included inside ft_error, since it does take only
 the structure and the error message as parameters.
 */
 
-void	ft_bad_par(char *string, char *checked, t_all *all)
+void	ft_bad_par(char *error, char *string, char *checked, t_all *all)
 {
 	free(string);
 	free(checked);
 	checked = NULL;
-	ft_error(BAD_PAR, all);
+	ft_error(error, all);
 }
 
 /* Removes the last elements of a t_list. */
@@ -67,6 +67,8 @@ char *ft_copy_free(char *string)
 
 	len = ft_strlen(string) + 1;
 	res = ft_calloc(len, sizeof(char));
+	if (!res)
+		
 	ft_strlcpy(res, string, len);
 	free(string);
 	return(res);

@@ -6,9 +6,15 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 19:45:52 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/14 16:38:54 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/17 18:37:31 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/cub3d.h"
 
+/*
+void ft_check_map(t_all *all)
+{
+		
+}
+*/

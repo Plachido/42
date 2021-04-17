@@ -6,7 +6,7 @@
 /*   By: plpelleg <plpelleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:54:25 by plpelleg          #+#    #+#             */
-/*   Updated: 2021/04/16 18:49:47 by plpelleg         ###   ########.fr       */
+/*   Updated: 2021/04/17 18:21:26 by plpelleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ void	ft_free_info(t_all *all)
 	if (info->S)
 		free(info->S);
 	if (info->map)
+	{
 		while (info->map[i])
 			free(info->map[i++]);
+		free(info->map);
+	}
 	if (info)
 		free(info);
 }
@@ -46,7 +49,8 @@ void	ft_free_mlx(t_all *all)
 	t_mlx	*mlx;
 
 	mlx = all->mlx;
-	free(mlx);
-	//if (mlx->mlx_ptr)
-	//	free(mlx->mlx_ptr);
+	if (mlx->mlx_ptr)
+		free(mlx->mlx_ptr);
+	if (mlx)
+		free(mlx);
 }

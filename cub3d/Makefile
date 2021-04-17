@@ -17,9 +17,10 @@ $(NAME): $(OBJ) $(MLX) $(LIBFT)
 	@rm -rf Cub3D
 	@echo "[Cub3D compilation...]"
 	@$(MAKE) bonus -C ./libft
-	@gcc $(SRCS) $(FLAGS) -fsanitize=address $(MLX) $(LIBFT) -o $(NAME) -g
+	@gcc $(SRCS) $(FLAGS) $(MLX) $(LIBFT) -o $(NAME) -g
 	@echo "[Done!]"
 	@$(MAKE) clean
+#-fsanitize=address
 
 $(LIBFT):
 	@echo "[compiling libft...]"
