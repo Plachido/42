@@ -9,5 +9,5 @@ C04           Graded 50/100
 C05           Graded 0/100
 C06           Graded 70/100
 ```
-[![plpelleg's 42 stats](https://badge42.herokuapp.com/api/stats/plpelleg?cursus=C%20Piscine)](https://github.com/JaeSeoKim/badge42) ![norminette](https://github.com/plachido/42/workflows/main.yml/badge.svg)
+[![plpelleg's 42 stats](https://badge42.herokuapp.com/api/stats/plpelleg?cursus=C%20Piscine)](https://github.com/JaeSeoKim/badge42) ![norminette](https://github.com/plachido/42/.github/workflows/main.yml/badge.svg)
 
