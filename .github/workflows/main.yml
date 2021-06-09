@@ -17,4 +17,4 @@ jobs:
     steps:
     - uses: alexandregv/norminette-action@v3
       with:
-        flags: "$(find . -path ./libft -prune -false -o -name -path ./ft_printf -prune -false -path ./Piscine -prune -false)"
+        flags: "$(find . -path ./libft -prune -false -o -path ./ft_printf -prune -false -path ./Piscine -prune -false)"
