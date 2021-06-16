@@ -3,10 +3,10 @@ All of the code found inside this repository has been written in accordance to t
 All subjects, resources, test files and notes can be found inside each folder. 
 ## Projects
 ```
-libft               Graded 115/100 from Deepthought
-get_next_line       Graded 115/100 from Deepthought
-ft_printf           Graded 101/100 from Deepthought
-cub3D                   🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
+libft               115/100
+get_next_line       115/100
+ft_printf           101/100
+cub3D               105/100
 ```
 
 [![plpelleg's 42 stats](https://badge42.herokuapp.com/api/stats/plpelleg)](https://github.com/JaeSeoKim/badge42)
