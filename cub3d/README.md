@@ -5,8 +5,8 @@ In order to run the game with default maps and textures, just execute make with 
 
 **OTHER:**
 The makefile contains other useful rules:
-*`norme` checks for norme errors inside all files except for the ones contained in the minilibx folder
-*`leaks` runs the game and shows remaining leaks at end of the executiono
-*`save` takes a screenshot at the first frame of the game.
+  * `norme` checks for norme errors inside all files except for the ones contained in the minilibx folder
+  * `leaks` runs the game and shows remaining leaks at end of the execution
+  * `save` takes a screenshot at the first frame of the game.
 
 ![Screenshot](https://github.com/Plachido/42/blob/5fc2224fea84efbf8c718bd5731676314a3c8bb9/cub3d/Screenshot.png)
